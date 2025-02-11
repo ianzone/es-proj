@@ -7,14 +7,14 @@ bun install -D es-proj
 ### tsconfig.json
 Available extends:
 
-- `es-proj/tsconfig/dom`
-- `es-proj/tsconfig/node`
-- `es-proj/tsconfig/react`
-- `es-proj/tsconfig/rn`
+- `es-proj/tsconfig.dom.json`
+- `es-proj/tsconfig.node.json`
+- `es-proj/tsconfig.react.json`
+- `es-proj/tsconfig.rn.json`
 
 ```json
 {
-  "extends": "es-proj/tsconfig/react",
+  "extends": "es-proj/tsconfig.react.json",
   "compilerOptions": {}
 }
 ```

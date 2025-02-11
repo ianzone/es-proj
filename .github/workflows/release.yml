@@ -22,5 +22,6 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "lts/*"
+      - run: bash biome.patch.sh
       - run: npm i
       - run: npm run release
