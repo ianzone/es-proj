@@ -4,9 +4,10 @@
   "license": "ISC",
   "keywords": ["biome", "tsconfig"],
   "author": "Zhang Yiheng (a.k.a Ian) <yihengz@outlook.com> (https://github.com/ianzone)",
-  "files": ["biome.json", "tsconfig*.json"],
+  "files": ["biome.json", "tsconfig/tsconfig*.json"],
   "exports": {
-    "./biome": "./biome.json"
+    "./biome": "./biome.json",
+    "./tsconfig/*": "./tsconfig/tsconfig.*.json"
   },
   "scripts": {
     "commit": "git add -A && git-cz",
