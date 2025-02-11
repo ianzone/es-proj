@@ -1,0 +1,29 @@
+{
+  "name": "es-proj",
+  "type": "module",
+  "license": "ISC",
+  "keywords": ["biome", "tsconfig"],
+  "author": "Zhang Yiheng (a.k.a Ian) <yihengz@outlook.com> (https://github.com/ianzone)",
+  "files": ["biome.json", "tsconfig/tsconfig*.json"],
+  "exports": {
+    "biome": "./biome.json",
+    "tsconfig/dom": "./tsconfig/tsconfig.dom.json",
+    "tsconfig/node": "./tsconfig/tsconfig.node.json",
+    "tsconfig/react": "./tsconfig/tsconfig.react.json",
+    "tsconfig/rn": "./tsconfig/tsconfig.rn.json"
+  },
+  "scripts": {
+    "commit": "git add -A && git-cz",
+    "release": "semantic-release"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.1",
+    "git-cz": "^4.9.0",
+    "semantic-release": "^24.2.2"
+  },
+  "peerDependencies": {
+    "@biomejs/biome": "^1.9.4",
+    "typescript": "^5.7.3"
+  },
+  "trustedDependencies": ["@biomejs/biome"]
+}
