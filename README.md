@@ -11,6 +11,7 @@ Available extends:
 - `es-proj/tsconfig/node`
 - `es-proj/tsconfig/react`
 - `es-proj/tsconfig/rn`
+- `es-proj/tsconfig/taro`
 
 ```json
 {
@@ -26,7 +27,8 @@ Available extends:
 }
 ```
 
-### Bun
+### Utils
 ```ts
-import { run } from 'es-proj/bun'
+import { run } from 'es-proj/js/bun'
+import { measure, measureAsync } from 'es-proj/js/es'
 ```

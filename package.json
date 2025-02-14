@@ -7,7 +7,7 @@
   "author": "Zhang Yiheng (a.k.a Ian) <yihengz@outlook.com> (https://github.com/ianzone)",
   "files": ["biome.json", "tsconfig/tsconfig*.json", "dist"],
   "exports": {
-    "./bun": "./dist/src/bun/index.js",
+    "./js/*": "./dist/src/*/index.js",
     "./biome": "./biome.json",
     "./tsconfig/*": "./tsconfig/tsconfig.*.json"
   },
