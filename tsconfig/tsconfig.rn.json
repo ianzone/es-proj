@@ -1,6 +1,6 @@
 {
   "extends": "./tsconfig.node.json",
   "compilerOptions": {
-    "jsx": "react-native" // 使用的jsx规范
+    "jsx": "react-native"
   }
 }

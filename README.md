@@ -1,4 +1,4 @@
-## Config files for your JS/TS projects.
+## Config files utils for your JS/TS projects.
 
 ```bash
 bun install -D es-proj
@@ -24,4 +24,9 @@ Available extends:
   "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
   "extends": ["es-proj/biome"]
 }
+```
+
+### Bun
+```ts
+import { run } from 'es-proj/bun'
 ```
