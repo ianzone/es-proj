@@ -1,17 +1,8 @@
 import { expect, test } from 'bun:test';
-import { $ } from 'bun';
-
-async function run(cmd: string) {
-  const { stdout, stderr, exitCode } = await $`${{ raw: cmd }}`.nothrow().quiet();
-  return {
-    stdout: stdout.toString(),
-    stderr: stderr.toString(),
-    exitCode,
-  };
-}
+import { run } from './index';
 
 test('run()', async () => {
-  expect(await run('echo Hello, world!')).toBe({
+  expect(await run('echo Hello, world!')).toEqual({
     stdout: 'Hello, world!\n',
     stderr: '',
     exitCode: 0,

@@ -1,4 +1,4 @@
-## Config files utils for your JS/TS projects.
+## Config files and utils for your JS/TS projects.
 
 ```bash
 bun install -D es-proj
