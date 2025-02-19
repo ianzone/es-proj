@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "type": "module",
   "license": "ISC",
-  "keywords": ["biome", "tsconfig"],
+  "keywords": ["biome", "tsconfig", "typescript", "bun", "node"],
   "author": "Zhang Yiheng (a.k.a Ian) <yihengz@outlook.com> (https://github.com/ianzone)",
   "files": ["biome.json", "tsconfig/tsconfig*.json", "dist"],
   "exports": {

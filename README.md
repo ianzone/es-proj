@@ -5,6 +5,12 @@ bun install -D es-proj
 ```
 
 ### tsconfig.json
+```json
+{
+  "extends": "es-proj/tsconfig/react"
+}
+```
+
 Available extends:
 
 - `es-proj/tsconfig/dom`
@@ -12,12 +18,6 @@ Available extends:
 - `es-proj/tsconfig/react`
 - `es-proj/tsconfig/rn`
 - `es-proj/tsconfig/taro`
-
-```json
-{
-  "extends": "es-proj/tsconfig/react"
-}
-```
 
 ### biome.json
 ```json
