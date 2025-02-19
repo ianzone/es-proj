@@ -29,6 +29,6 @@ Available extends:
 
 ### Utils
 ```ts
-import { run } from 'es-proj/js/bun'
-import { measure, measureAsync } from 'es-proj/js/es'
+import { run, git } from 'es-proj/js/bun'
+import { measure } from 'es-proj/js/es'
 ```

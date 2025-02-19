@@ -11,21 +11,16 @@ class Time {
 /**
  * Measure function performance
  */
-export function measure<R>(func: () => R) {
+export function measure<R>(func: () => R | Promise<R>) {
   const start = performance.now();
   const result = func();
-  const end = performance.now();
-  const time = new Time(end - start);
-  return { result, time };
-}
 
-/**
- * Measure async function performance
- */
-export async function measureAsync<R>(func: () => Promise<R>) {
-  const start = performance.now();
-  const result = await func();
-  const end = performance.now();
-  const time = new Time(end - start);
-  return { result, time };
+  if (result instanceof Promise) {
+    return result.then((res) => ({
+      result: res,
+      time: new Time(performance.now() - start),
+    }));
+  }
+
+  return { result, time: new Time(performance.now() - start) };
 }
