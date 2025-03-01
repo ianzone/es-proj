@@ -1,0 +1,13 @@
+{
+  "name": "@proj/configs",
+  "version": "1.0.0",
+  "description": "Config files for your JS/TS projects.",
+  "files": ["biome.json", "tsconfig/tsconfig*.json"],
+  "exports": {
+    "./biome": "./biome.json",
+    "./tsconfig/*": "./tsconfig/tsconfig.*.json"
+  },
+  "scripts": {
+    "prepack": "sed -i '2d' 'biome.json'"
+  }
+}

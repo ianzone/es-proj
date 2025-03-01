@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "compilerOptions": {
+    // 构建
+    "lib": ["ESNext"], // 使用的库的声明
+    "target": "ESNext", // 生成的目标代码规范
+    "module": "ESNext", // 生成的模块规范
+    "moduleResolution": "bundler", // 可以在使用用 exports 声明类型的同时，使用相对路径模块可以不写扩展名
+    "verbatimModuleSyntax": true, // 保留模块的原始语法, 某些构建工具可能需要
+    "resolveJsonModule": true, // 允许导入json文件
+    "noEmit": true,
+    "rootDir": "${configDir}",
+    "outDir": "${configDir}/dist",
+    "sourceMap": true, // 生成源映射文件
+    "sourceRoot": "${configDir}", // 源文件的根目录
+    "declaration": true, // 生成 .d.ts 文件
+    "tsBuildInfoFile": "${configDir}/.cache/.tsbuildinfo", // 增量编译的缓存目录
+
+    // 检查
+    "strict": true,
+    "skipLibCheck": true,
+    "noUnusedLocals": true,
+    "noFallthroughCasesInSwitch": true,
+    "forceConsistentCasingInFileNames": true
+  }
+}

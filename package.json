@@ -1,0 +1,17 @@
+{
+  "workspaces": ["packages/*"],
+  "scripts": {
+    "test": "bun run --filter=* test",
+    "build": "bun run --filter=* build"
+  },
+  "author": "Zhang Yiheng <yihengz@outlook.com> (a.k.a Ian)",
+  "license": "ISC",
+  "devDependencies": {
+    "@proj/configs": "workspace:*",
+    "@biomejs/biome": "^1.9.4",
+    "@types/bun": "^1.2.4",
+    "git-cz": "^4.9.0",
+    "lefthook": "^1.11.2",
+    "typescript": "^5.8.2"
+  }
+}

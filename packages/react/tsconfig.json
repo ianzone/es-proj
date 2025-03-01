@@ -1,0 +1,9 @@
+{
+  "extends": "@proj/configs/tsconfig/react",
+  "compilerOptions": {
+    "noEmit": false,
+    "emitDeclarationOnly": true,
+    "baseUrl": "."
+  },
+  "include": ["index.ts"]
+}

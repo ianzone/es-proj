@@ -1,0 +1,32 @@
+{
+  "name": "@proj/utils",
+  "version": "1.0.0",
+  "description": "Utils for your JS/TS projects.",
+  "type": "module",
+  "files": ["dist"],
+  "exports": {
+    ".": {
+      "default": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./browser": {
+      "default": "./dist/browser/index.js",
+      "types": "./dist/browser/index.d.ts"
+    },
+    "./bun": {
+      "default": "./dist/bun/index.js",
+      "types": "./dist/bun/index.d.ts"
+    },
+    "./node": {
+      "default": "./dist/node/index.js",
+      "types": "./dist/node/index.d.ts"
+    }
+  },
+  "scripts": {
+    "test": "bun test --coverage",
+    "build": "bun build.ts"
+  },
+  "devDependencies": {
+    "@proj/configs": "workspace:*"
+  }
+}
