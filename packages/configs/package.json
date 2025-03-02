@@ -9,7 +9,7 @@
   },
   "scripts": {
     "prepack": "sed -n '2p' biome.json > tmp && sed -i '2d' 'biome.json'",
-    "postpublish": "sed -i '1r tmp' biome.json && rm tmp",
+    "postpack": "sed -i '1r tmp' biome.json && rm tmp",
     "release": "npm publish --access public"
   }
 }
