@@ -1,5 +1,5 @@
 {
-  "name": "@proj/utils",
+  "name": "@es-proj/utils",
   "version": "1.0.0",
   "description": "Utils for your JS/TS projects.",
   "type": "module",
@@ -23,10 +23,12 @@
     }
   },
   "scripts": {
-    "test": "bun test --coverage",
-    "build": "bun build.ts"
+    "test": "bun test",
+    "coverage": "bun test --coverage",
+    "build": "bun build.ts",
+    "release": "npm publish --access public"
   },
   "devDependencies": {
-    "@proj/configs": "workspace:*"
+    "@es-proj/configs": "workspace:*"
   }
 }

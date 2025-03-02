@@ -1,9 +1,11 @@
 {
-  "extends": "@proj/configs/tsconfig/react",
+  "extends": "@es-proj/configs/tsconfig/react",
   "compilerOptions": {
     "noEmit": false,
     "emitDeclarationOnly": true,
-    "baseUrl": "."
+    "baseUrl": ".",
+    "rootDir": "./src"
   },
-  "include": ["index.ts"]
+  "include": ["src/**/*.ts"],
+  "exclude": ["src/**/*.spec.ts"]
 }

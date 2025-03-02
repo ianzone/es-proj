@@ -1,0 +1,23 @@
+# yaml-language-server:$schema=./node_modules/lefthook/schema.json
+# https://evilmartians.github.io/lefthook/configuration/
+
+pre-commit:
+  piped: true
+  jobs:
+    - name: Linting & Formatting
+      glob: "*.{ts,tsx,js,jsx,json,jsonc,css}"
+      run: bun biome check --fix {staged_files} --reporter summary
+      stage_fixed: true
+
+prepare-commit-msg:
+  commands:
+    commit:
+      interactive: true
+      run: bun git-cz --hook
+      env:
+        LEFTHOOK: "0"
+
+post-merge:
+  commands:
+    packages:
+      run: git diff --quiet HEAD@{$(echo 1)} -- bun.lock || bun i

@@ -1,5 +1,7 @@
 import { $, type BuildConfig } from 'bun';
 
+await $`rm -r dist`.nothrow();
+
 // https://bun.sh/docs/bundler
 function build(cfg: BuildConfig) {
   return Bun.build({

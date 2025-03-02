@@ -1,17 +1,22 @@
 {
   "workspaces": ["packages/*"],
   "scripts": {
-    "test": "bun run --filter=* test",
-    "build": "bun run --filter=* build"
+    "test": "nx run-many -t test",
+    "coverage": "bun run --filter=* coverage",
+    "build": "nx run-many -t build",
+    "lint": "biome check --fix packages",
+    "prepare": "lefthook install",
+    "commit": "git add -A && git commit --no-edit",
+    "release": "nx run-many -t release"
   },
-  "author": "Zhang Yiheng <yihengz@outlook.com> (a.k.a Ian)",
-  "license": "ISC",
   "devDependencies": {
-    "@proj/configs": "workspace:*",
     "@biomejs/biome": "^1.9.4",
+    "@es-proj/configs": "workspace:*",
+    "@happy-dom/global-registrator": "^17.1.8",
     "@types/bun": "^1.2.4",
     "git-cz": "^4.9.0",
     "lefthook": "^1.11.2",
+    "nx": "^20.4.6",
     "typescript": "^5.8.2"
   }
 }

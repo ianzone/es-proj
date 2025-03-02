@@ -1,5 +1,5 @@
 {
-  "name": "@proj/configs",
+  "name": "@es-proj/configs",
   "version": "1.0.0",
   "description": "Config files for your JS/TS projects.",
   "files": ["biome.json", "tsconfig/tsconfig*.json"],
@@ -8,6 +8,8 @@
     "./tsconfig/*": "./tsconfig/tsconfig.*.json"
   },
   "scripts": {
-    "prepack": "sed -i '2d' 'biome.json'"
+    "prepack": "sed -n '2p' biome.json > tmp && sed -i '2d' 'biome.json'",
+    "postpublish": "sed -i '1r tmp' biome.json && rm tmp",
+    "release": "npm publish --access public"
   }
 }

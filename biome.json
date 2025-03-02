@@ -1,4 +1,5 @@
 {
   "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
-  "extends": ["@proj/configs/biome"]
+  "extends": ["@es-proj/configs/biome"],
+  "files": { "ignore": ["**/tsconfig.*.json"] }
 }

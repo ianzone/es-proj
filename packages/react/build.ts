@@ -1,9 +1,10 @@
 import { $ } from 'bun';
 
-// https://bun.sh/docs/bundler
+await $`rm -r dist`.nothrow();
 
-const buildBrowser = Bun.build({
-  entrypoints: ['./index.ts'],
+// https://bun.sh/docs/bundler
+const build = Bun.build({
+  entrypoints: ['./src/index.ts', './src/client/index.ts', './src/server/index.ts'],
   outdir: './dist',
   splitting: true,
   minify: true,
@@ -12,4 +13,4 @@ const buildBrowser = Bun.build({
 
 const dts = $`tsc`;
 
-Promise.all([dts, buildBrowser]);
+Promise.all([dts, build]);
