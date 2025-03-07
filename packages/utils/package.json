@@ -1,6 +1,6 @@
 {
   "name": "@es-proj/utils",
-  "version": "1.0.2",
+  "version": "1.1.2",
   "description": "Utils for your JS/TS projects.",
   "type": "module",
   "files": ["dist"],
@@ -24,9 +24,9 @@
   },
   "scripts": {
     "test": "bun test",
-    "coverage": "bun test --coverage",
+    "cov": "bun test --coverage",
     "build": "bun build.ts",
-    "release": "npm publish --access public"
+    "release": "bun publish --access public"
   },
   "devDependencies": {
     "@es-proj/configs": "workspace:*"

@@ -20,9 +20,9 @@
   },
   "scripts": {
     "test": "bun test",
-    "coverage": "bun test --coverage",
+    "cov": "bun test --coverage",
     "build": "bun build.ts",
-    "release": "npm publish --access public"
+    "release": "bun publish --access public"
   },
   "dependencies": {
     "@es-proj/utils": "workspace:*"

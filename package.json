@@ -1,9 +1,9 @@
 {
   "workspaces": ["packages/*"],
   "scripts": {
-    "test": "nx run-many -t test",
-    "coverage": "bun run --filter=* coverage",
     "build": "nx run-many -t build",
+    "test": "nx run-many -t test",
+    "cov": "bun run --filter=* cov",
     "lint": "biome check --fix packages",
     "prepare": "lefthook install",
     "commit": "git add -A && git commit --no-edit",
@@ -12,11 +12,11 @@
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
     "@es-proj/configs": "workspace:*",
-    "@happy-dom/global-registrator": "^17.1.8",
+    "@happy-dom/global-registrator": "^17.3.0",
     "@types/bun": "^1.2.4",
     "git-cz": "^4.9.0",
-    "lefthook": "^1.11.2",
-    "nx": "^20.4.6",
+    "lefthook": "^1.11.3",
+    "nx": "^20.5.0",
     "typescript": "^5.8.2"
   }
 }

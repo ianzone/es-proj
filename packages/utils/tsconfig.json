@@ -1,5 +1,5 @@
 {
-  "extends": "@es-proj/configs/tsconfig/dom",
+  "extends": "@es-proj/configs/tsconfig.dom",
   "compilerOptions": {
     "noEmit": false,
     "emitDeclarationOnly": true,

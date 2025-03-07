@@ -1,15 +1,15 @@
 {
   "name": "@es-proj/configs",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Config files for your JS/TS projects.",
   "files": ["biome.json", "tsconfig/tsconfig*.json"],
   "exports": {
     "./biome": "./biome.json",
-    "./tsconfig/*": "./tsconfig/tsconfig.*.json"
+    "./tsconfig.*": "./tsconfig.*.json"
   },
   "scripts": {
     "prepack": "sed -n '2p' biome.json > tmp && sed -i '2d' 'biome.json'",
     "postpack": "sed -i '1r tmp' biome.json && rm tmp",
-    "release": "npm publish --access public"
+    "release": "bun publish --access public"
   }
 }
