@@ -7,4 +7,9 @@ test('run()', async () => {
     stderr: '',
     exitCode: 0,
   });
+  expect(await run('node -e \'console.error("new err");process.exit(1)\'')).toEqual({
+    stdout: '',
+    stderr: 'new err',
+    exitCode: 1,
+  });
 });

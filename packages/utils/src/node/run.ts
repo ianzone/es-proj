@@ -7,7 +7,14 @@ const sh = promisify(exec);
  */
 export async function run(cmd: string) {
   const subprocess = sh(cmd);
-  const { stdout, stderr } = await subprocess;
+  let stdout = '';
+  let stderr = '';
+  try {
+    stdout = (await subprocess).stdout;
+  } catch (err: any) {
+    stderr = err.stderr;
+  }
+
   return {
     stdout: stdout.trim(),
     stderr: stderr.trim(),

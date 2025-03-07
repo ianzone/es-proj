@@ -1,6 +1,6 @@
 {
   "name": "@es-proj/utils",
-  "version": "1.1.2",
+  "version": "1.2.3",
   "description": "Utils for your JS/TS projects.",
   "type": "module",
   "files": ["dist"],
@@ -30,5 +30,8 @@
   },
   "devDependencies": {
     "@es-proj/configs": "workspace:*"
+  },
+  "dependencies": {
+    "effect": "^3.13.7"
   }
 }
