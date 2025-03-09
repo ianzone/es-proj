@@ -1,4 +1,6 @@
 {
+  "name": "es-proj",
+  "private": true,
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
     "@es-proj/configs": "workspace:*",

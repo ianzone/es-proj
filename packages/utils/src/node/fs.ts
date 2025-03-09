@@ -6,7 +6,7 @@ export function lookUp(fileOrFolder: string, startDir?: string): string | undefi
   for (let i = cwd.length; i > 0; i--) {
     const dir = cwd.slice(0, i).join(sep);
     if (existsSync(`${dir}${sep}${fileOrFolder}`)) {
-      return `${dir}${sep}`;
+      return dir;
     }
   }
 }

@@ -1,6 +1,6 @@
 {
   "name": "@es-proj/utils",
-  "version": "1.3.3",
+  "version": "1.3.4",
   "description": "Utils for your JS/TS projects.",
   "type": "module",
   "files": ["dist"],
