@@ -1,14 +1,4 @@
 {
-  "workspaces": ["packages/*"],
-  "scripts": {
-    "build": "nx run-many -t build",
-    "test": "nx run-many -t test",
-    "cov": "bun run --filter=* cov",
-    "lint": "biome check --fix packages",
-    "prepare": "lefthook install",
-    "commit": "git add -A && git commit --no-edit",
-    "release": "nx run-many -t release"
-  },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
     "@es-proj/configs": "workspace:*",
@@ -18,5 +8,15 @@
     "lefthook": "^1.11.3",
     "nx": "^20.5.0",
     "typescript": "^5.8.2"
-  }
+  },
+  "scripts": {
+    "build": "nx run-many -t build",
+    "test": "nx run-many -t test",
+    "cov": "bun run --filter=* cov",
+    "lint": "biome check --fix packages",
+    "prepare": "lefthook install",
+    "commit": "git add -A && git commit --no-edit",
+    "release": "nx run-many -t release"
+  },
+  "workspaces": ["packages/*"]
 }
