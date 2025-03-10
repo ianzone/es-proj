@@ -1,18 +1,41 @@
 import { existsSync, statSync } from 'node:fs';
-import { join, sep } from 'node:path';
+import { dirname, join } from 'node:path';
 import { glob } from 'glob';
 
-export function lookUp(target: string, startDir: string = process.cwd()): string | undefined {
-  const cwd = startDir.split(sep);
-  for (let i = cwd.length; i > 0; i--) {
-    const dir = cwd.slice(0, i).join(sep);
-    if (existsSync(`${dir}${sep}${target}`)) {
-      return dir;
+export type LookUpOptions = {
+  root?: string;
+  fullPath?: boolean;
+  keep?: number;
+};
+
+export function lookUp(
+  target: string,
+  { root = process.cwd(), fullPath = false, keep = 1 }: LookUpOptions = {},
+): string[] {
+  const results: string[] = [];
+  const dir = root;
+  do {
+    const targetPath = join(dir, target);
+    if (existsSync(targetPath)) {
+      results.push(fullPath ? targetPath : dir);
+      if (results.length === keep) {
+        return results;
+      }
     }
-  }
+  } while (dir !== dirname(dir));
+  return results;
 }
 
-export function lookDown(target: string, root: string, patterns: string[]): string[] {
+export type LookDownOptions = {
+  root?: string;
+  fullPath?: boolean;
+  patterns?: string[];
+};
+
+export function lookDown(
+  target: string,
+  { root = process.cwd(), patterns = ['**/*'], fullPath = false }: LookDownOptions = {},
+): string[] {
   const results: string[] = [];
   const include: string[] = [];
   const exclude: string[] = [];
@@ -31,14 +54,13 @@ export function lookDown(target: string, root: string, patterns: string[]): stri
     absolute: true,
   });
 
-  console.log(matchedPaths);
   for (const matchedPath of matchedPaths) {
     // 如果匹配到的是目录
     if (statSync(matchedPath).isDirectory()) {
       const targetPath = join(matchedPath, target);
 
       if (existsSync(targetPath)) {
-        results.push(matchedPath);
+        results.push(fullPath ? targetPath : matchedPath);
       }
     }
   }
