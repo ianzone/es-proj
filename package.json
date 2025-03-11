@@ -4,8 +4,8 @@
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
     "@es-proj/configs": "workspace:*",
-    "@happy-dom/global-registrator": "^17.3.0",
-    "@types/bun": "^1.2.4",
+    "@happy-dom/global-registrator": "^17.4.3",
+    "@types/bun": "^1.2.5",
     "git-cz": "^4.9.0",
     "lefthook": "^1.11.3",
     "nx": "^20.5.0",

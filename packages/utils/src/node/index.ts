@@ -1,2 +1,3 @@
 export * from './subprocess';
-export * from './fs';
+export * from './path';
+export * from './process';
