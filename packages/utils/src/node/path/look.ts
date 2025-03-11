@@ -11,7 +11,7 @@ export type LookUpOptions = {
 export function lookUp(
   target: string,
   { root = process.cwd(), keep = 1 }: LookUpOptions = {},
-): string[] {
+): string[] | undefined {
   const results: string[] = [];
   let cwd = root;
   do {
@@ -24,7 +24,7 @@ export function lookUp(
     }
     cwd = dirname(cwd);
   } while (cwd !== dirname(cwd));
-  return results;
+  return results.length ? results : undefined;
 }
 
 export type LookDownOptions = {
