@@ -32,8 +32,6 @@ export type LookDownOptions = {
   patterns?: string | string[];
 };
 
-console.log(lookUp('package.json'));
-
 export type MatchedPath = ParsedPath & { path: string };
 
 export function lookDown(
