@@ -1,13 +1,13 @@
 {
   "name": "@es-proj/utils",
-  "version": "1.6.2",
+  "version": "1.6.4",
   "description": "Utils for your JS/TS projects.",
   "type": "module",
   "files": ["dist"],
   "exports": {
     ".": {
-      "default": "./dist/index.js",
-      "types": "./dist/index.d.ts"
+      "default": "./dist/shared/index.js",
+      "types": "./dist/shared/index.d.ts"
     },
     "./browser": {
       "default": "./dist/browser/index.js",
@@ -30,7 +30,7 @@
   },
   "dependencies": {
     "glob": "^11.0.1",
-    "type-fest": "^4.37.0"
+    "type-fest": "^4.39.0"
   },
   "devDependencies": {
     "@es-proj/configs": "workspace:*"

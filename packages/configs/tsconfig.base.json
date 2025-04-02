@@ -6,9 +6,14 @@
     "target": "ESNext", // 生成的目标代码规范
     "module": "ESNext", // 生成的模块规范
     "moduleResolution": "bundler", // 可以在使用用 exports 声明类型的同时，使用相对路径模块可以不写扩展名
-    "verbatimModuleSyntax": true, // 保留模块的原始语法, 某些构建工具可能需要
-    "resolveJsonModule": true, // 允许导入json文件
+    "verbatimModuleSyntax": true, // 保留模块的原始语法，某些构建工具可能需要
+    "resolveJsonModule": true, // 允许导入 JSON 文件
     "noEmit": true,
+    "baseUrl": "${configDir}",
+    "paths": {
+      "src/*": ["${configDir}/src/*"],
+      "@/*": ["${configDir}/src/*"],
+    },
     "rootDir": "${configDir}",
     "outDir": "${configDir}/dist",
     "sourceMap": true, // 生成源映射文件
@@ -22,5 +27,10 @@
     "noUnusedLocals": true,
     "noFallthroughCasesInSwitch": true,
     "forceConsistentCasingInFileNames": true
-  }
+  },
+  "include": ["${configDir}/src"],
+  "exclude": [
+    "${configDir}/src/**/*.stories.{ts,tsx}",
+    "${configDir}/src/**/*.{spec,test}.{ts,tsx}"
+  ]
 }

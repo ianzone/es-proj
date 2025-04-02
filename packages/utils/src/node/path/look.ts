@@ -4,31 +4,31 @@ import { glob } from 'glob';
 import { exit } from '../process';
 
 export type LookUpOptions = {
-  root?: string;
+  cwd?: string;
   keep?: number;
 };
 
 export function lookUp(
   target: string,
-  { root = process.cwd(), keep = 1 }: LookUpOptions = {},
+  { cwd = process.cwd(), keep = 1 }: LookUpOptions = {},
 ): string[] | undefined {
   const results: string[] = [];
-  let cwd = root;
+  let pwd = cwd;
   do {
-    const targetPath = join(cwd, target);
+    const targetPath = join(pwd, target);
     if (existsSync(targetPath)) {
       results.push(targetPath);
       if (keep && results.length === keep) {
         return results;
       }
     }
-    cwd = dirname(cwd);
-  } while (cwd !== dirname(cwd));
+    pwd = dirname(pwd);
+  } while (pwd !== dirname(pwd));
   return results.length ? results : undefined;
 }
 
 export type LookDownOptions = {
-  root?: string;
+  cwd?: string;
   patterns?: string | string[];
 };
 
@@ -36,7 +36,7 @@ export type MatchedPath = ParsedPath & { path: string };
 
 export function lookDown(
   target: string,
-  { root = process.cwd(), patterns = '**' }: LookDownOptions = {},
+  { cwd = process.cwd(), patterns = '**' }: LookDownOptions = {},
 ): string[] {
   const include: string[] = [];
   const exclude: string[] = [];
@@ -63,7 +63,7 @@ export function lookDown(
 
   const matchedPaths = glob.sync(include, {
     ignore: exclude,
-    cwd: root,
+    cwd,
     absolute: true,
   });
 
