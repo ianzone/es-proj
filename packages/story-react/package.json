@@ -1,30 +1,20 @@
 {
   "name": "@es-proj/story-react",
-  "version": "1.0.2",
-  "description": "Config files for your Storybook projects.",
+  "version": "1.0.6",
   "type": "module",
+  "description": "Config files for your Storybook projects.",
   "files": ["dist"],
   "exports": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "scripts": {
-    "build": "bun build.ts",
+    "build": "rm -rf dist && tsc",
     "release": "bun publish --access public"
   },
   "peerDependencies": {
-    "@chromatic-com/storybook": "^3.2.6",
-    "@es-proj/configs": "workspace:*",
+    "@es-proj/storybook": "workspace:*",
     "@rsbuild/plugin-react": "^1.1.1",
-    "@storybook/addon-a11y": "^8.6.11",
-    "@storybook/addon-coverage": "^1.0.5",
-    "@storybook/addon-essentials": "^8.6.11",
-    "@storybook/addon-interactions": "^8.6.11",
-    "@storybook/addon-links": "^8.6.11",
-    "@storybook/test-runner": "^0.22.0",
+    "@testing-library/react": "^16.2.0",
     "@types/react": "^19.0.10",
-    "@types/react-dom": "^19.0.4",
-    "@vitest/coverage-istanbul": "^3.1.1",
-    "happy-dom": "^17.4.4",
-    "storybook-addon-rslib": "^1.0.1",
-    "storybook-react-rsbuild": "^1.0.1"
+    "@types/react-dom": "^19.0.4"
   }
 }

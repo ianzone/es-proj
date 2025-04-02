@@ -1,7 +1,6 @@
-import { pluginReact } from '@rsbuild/plugin-react';
 import { defineConfig } from '@rslib/core';
 
-export const rslibConfig = defineConfig({
+export const rslibConfigBase = defineConfig({
   source: {
     entry: {
       index: ['src/**', '!src/**/*.{test,spec,stories}.*', '!src/**/*.mdx'],
@@ -18,5 +17,4 @@ export const rslibConfig = defineConfig({
     target: 'web',
     sourceMap: true,
   },
-  plugins: [pluginReact()],
 });
