@@ -1,6 +1,6 @@
 {
   "name": "@es-proj/utils",
-  "version": "1.6.4",
+  "version": "1.6.5",
   "description": "Utils for your JS/TS projects.",
   "type": "module",
   "files": ["dist"],
@@ -30,9 +30,9 @@
   },
   "dependencies": {
     "glob": "^11.0.1",
-    "type-fest": "^4.39.0"
+    "type-fest": "^4.39.1"
   },
-  "devDependencies": {
+  "peerDependencies": {
     "@es-proj/configs": "workspace:*"
   }
 }

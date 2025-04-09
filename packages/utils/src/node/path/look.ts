@@ -1,5 +1,5 @@
 import { existsSync } from 'node:fs';
-import { type ParsedPath, dirname, join } from 'node:path';
+import { dirname, join } from 'node:path';
 import { glob } from 'glob';
 import { exit } from '../process';
 
@@ -8,6 +8,14 @@ export type LookUpOptions = {
   keep?: number;
 };
 
+/**
+ * Look up for a file or directory in the parent directories.
+ * @param target - The target file or directory to look for.
+ * @param options - Options for the lookup.
+ * @param options.cwd - The starting directory to look from. Defaults to the current working directory.
+ * @param options.keep - The number of results to keep. Defaults to 1.
+ * @returns An array of paths if found, otherwise undefined.
+ */
 export function lookUp(
   target: string,
   { cwd = process.cwd(), keep = 1 }: LookUpOptions = {},
@@ -32,8 +40,14 @@ export type LookDownOptions = {
   patterns?: string | string[];
 };
 
-export type MatchedPath = ParsedPath & { path: string };
-
+/**
+ * Look down for a file or directory in the current directory and its subdirectories.
+ * @param target - The target file or directory to look for.
+ * @param options - Options for the look down.
+ * @param options.cwd - The starting directory to look from. Defaults to the current working directory.
+ * @param options.patterns - The glob patterns to match. Defaults to '**'.
+ * @returns An array of matched paths.
+ */
 export function lookDown(
   target: string,
   { cwd = process.cwd(), patterns = '**' }: LookDownOptions = {},

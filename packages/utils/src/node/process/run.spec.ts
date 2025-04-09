@@ -1,14 +1,14 @@
 import { expect, test } from 'bun:test';
-import { sh, shSync } from './run';
+import { run, runSync } from './run';
 
 test('sh()', async () => {
-  expect(await sh('echo Hello, world!')).toEqual({
+  expect(await run('echo Hello, world!')).toEqual({
     stdout: 'Hello, world!',
     stderr: '',
     exitCode: 0,
   });
   expect(
-    await sh('node -e \'console.log("new log");console.error("new err");process.exit(1)\''),
+    await run('node -e \'console.log("new log");console.error("new err");process.exit(1)\''),
   ).toEqual({
     stdout: 'new log',
     stderr: 'new err',
@@ -17,13 +17,13 @@ test('sh()', async () => {
 });
 
 test('shSync()', () => {
-  expect(shSync('echo Hello, world!')).toEqual({
+  expect(runSync('echo Hello, world!')).toEqual({
     stdout: 'Hello, world!',
     stderr: '',
     exitCode: 0,
   });
   expect(
-    shSync('node -e \'console.log("new log");console.error("new err");process.exit(1)\''),
+    runSync('node -e \'console.log("new log");console.error("new err");process.exit(1)\''),
   ).toEqual({
     stdout: 'new log',
     stderr: 'new err',

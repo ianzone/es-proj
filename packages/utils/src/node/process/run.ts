@@ -8,7 +8,7 @@ const pe = promisify(exec);
  * @param cmd - The shell command to run.
  * @returns The stdout, stderr, and exit code of the command.
  */
-export async function sh(cmd: string) {
+export async function run(cmd: string) {
   const subprocess = pe(cmd);
   let stdout = '';
   let stderr = '';
@@ -16,7 +16,9 @@ export async function sh(cmd: string) {
     stdout = (await subprocess).stdout;
   } catch (error) {
     const err = error as ExecException;
+    // @ts-ignore
     stdout = err.stdout || '';
+    // @ts-ignore
     stderr = err.stderr || err.message;
   }
 
@@ -32,7 +34,7 @@ export async function sh(cmd: string) {
  * @param cmd - The shell command to run.
  * @returns The stdout, stderr, and exit code of the command.
  */
-export function shSync(cmd: string) {
+export function runSync(cmd: string) {
   let stdout = '';
   let stderr = '';
   let exitCode = 0;
@@ -41,7 +43,10 @@ export function shSync(cmd: string) {
   } catch (error) {
     const err = error as ExecException;
     // https://github.com/nodejs/node/issues/57392
+    // https://github.com/DefinitelyTyped/DefinitelyTyped/discussions/58854
+    // @ts-ignore
     stdout = err.stdout?.toString() || '';
+    // @ts-ignore
     stderr = err.stderr?.toString() || err.message;
     exitCode = err.code || 1;
   }

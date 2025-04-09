@@ -1,6 +1,6 @@
 {
   "name": "@es-proj/configs",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Config files for your JS/TS projects.",
   "files": ["biome.json", "tsconfig.*.json"],
   "exports": {
@@ -11,5 +11,9 @@
     "prepack": "sed -n '2p' biome.json > tmp && sed -i '2d' 'biome.json'",
     "postpack": "sed -i '1r tmp' biome.json && rm tmp",
     "release": "bun publish --access public"
+  },
+  "peerDependencies": {
+    "@biomejs/biome": "^1.9.4",
+    "typescript": "^5.8.3"
   }
 }

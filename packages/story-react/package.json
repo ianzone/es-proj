@@ -1,6 +1,6 @@
 {
   "name": "@es-proj/story-react",
-  "version": "1.0.6",
+  "version": "1.0.9",
   "type": "module",
   "description": "Config files for your Storybook projects.",
   "files": ["dist"],
@@ -12,9 +12,11 @@
   },
   "peerDependencies": {
     "@es-proj/storybook": "workspace:*",
-    "@rsbuild/plugin-react": "^1.1.1",
-    "@testing-library/react": "^16.2.0",
-    "@types/react": "^19.0.10",
-    "@types/react-dom": "^19.0.4"
+    "@rsbuild/plugin-react": "^1.2.0",
+    "@storybook/react": "^8.6.12",
+    "@testing-library/react": "^16.3.0",
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.2",
+    "storybook-react-rsbuild": "^1.0.1"
   }
 }
