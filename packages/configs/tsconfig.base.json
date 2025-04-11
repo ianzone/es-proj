@@ -30,7 +30,8 @@
   },
   "include": ["${configDir}/src"],
   "exclude": [
-    "${configDir}/src/**/*.stories.{ts,tsx}",
-    "${configDir}/src/**/*.{spec,test}.{ts,tsx}"
+    "${configDir}/src/**/*.stories.*",
+    "${configDir}/src/**/*.spec.*",
+    "${configDir}/src/**/*.test.*"
   ]
 }

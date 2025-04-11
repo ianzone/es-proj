@@ -14,7 +14,7 @@
     },
     "packages/configs": {
       "name": "@es-proj/configs",
-      "version": "1.0.7",
+      "version": "1.0.8",
       "peerDependencies": {
         "@biomejs/biome": "^1.9.4",
         "typescript": "^5.8.3",
@@ -22,30 +22,28 @@
     },
     "packages/react": {
       "name": "@es-proj/react",
-      "version": "1.0.2",
-      "dependencies": {
-        "@es-proj/utils": "workspace:*",
-      },
+      "version": "1.0.3",
       "devDependencies": {
-        "@es-proj/configs": "workspace:*",
-        "@testing-library/react": "^16.2.0",
+        "@testing-library/react": "^16.3.0",
       },
       "peerDependencies": {
-        "@types/react": "^19.0.10",
-        "react": "^19.0.0",
+        "@es-proj/utils": "workspace:*",
+        "@types/react": "^19.1.1",
+        "@types/react-dom": "^19.1.2",
+        "react": "^19.1.0",
+        "react-dom": "^19.1.0",
       },
     },
     "packages/story-react": {
       "name": "@es-proj/story-react",
       "version": "1.0.9",
       "peerDependencies": {
+        "@es-proj/react": "workspace:*",
         "@es-proj/storybook": "workspace:*",
-        "@rsbuild/plugin-react": "^1.2.0",
-        "@storybook/react": "^8.6.12",
-        "@testing-library/react": "^16.3.0",
-        "@types/react": "^19.1.0",
-        "@types/react-dom": "^19.1.2",
-        "storybook-react-rsbuild": "^1.0.1",
+        "@rsbuild/plugin-react": "latest",
+        "@storybook/react": "latest",
+        "@testing-library/react": "latest",
+        "storybook-react-rsbuild": "latest",
       },
     },
     "packages/storybook": {
@@ -71,8 +69,8 @@
       "name": "@es-proj/utils",
       "version": "1.6.5",
       "dependencies": {
-        "glob": "latest",
-        "type-fest": "latest",
+        "glob": "^11.0.1",
+        "type-fest": "^4.39.1",
       },
       "peerDependencies": {
         "@es-proj/configs": "workspace:*",
@@ -588,7 +586,7 @@
 
     "@types/node": ["@types/node@18.19.86", "", { "dependencies": { "undici-types": "~5.26.4" } }, "sha512-fifKayi175wLyKyc5qUfyENhQ1dCNI1UNjp653d8kuYcPQN5JhX3dGuP/XmvPTg/xRBn1VTLpbmi+H/Mr7tLfQ=="],
 
-    "@types/react": ["@types/react@19.1.0", "", { "dependencies": { "csstype": "^3.0.2" } }, "sha512-UaicktuQI+9UKyA4njtDOGBD/67t8YEBt2xdfqu8+gP9hqPUPsiXlNPcpS2gVdjmis5GKPG3fCxbQLVgxsQZ8w=="],
+    "@types/react": ["@types/react@19.1.1", "https://registry.npmmirror.com/@types/react/-/react-19.1.1.tgz", { "dependencies": { "csstype": "^3.0.2" } }, "sha512-ePapxDL7qrgqSF67s0h9m412d9DbXyC1n59O2st+9rjuuamWsZuD2w55rqY12CbzsZ7uVXb5Nw0gEp9Z8MMutQ=="],
 
     "@types/react-dom": ["@types/react-dom@19.1.2", "", { "peerDependencies": { "@types/react": "^19.0.0" } }, "sha512-XGJkWF41Qq305SKWEILa1O8vzhb3aOo3ogBlSmiqNko/WmRb6QIaweuZCXjKygVDXpzXb5wyxKTSOsmkuqj+Qw=="],
 
@@ -1452,7 +1450,7 @@
 
     "randombytes": ["randombytes@2.1.0", "", { "dependencies": { "safe-buffer": "^5.1.0" } }, "sha512-vYl3iOX+4CKUWuxGi9Ukhie6fsqXqS9FE2Zaic4tNFD2N2QQaXOMFbuKK4QmDHC0JO6B1Zp41J0LpT0oR68amQ=="],
 
-    "react": ["react@19.0.0", "https://registry.npmmirror.com/react/-/react-19.0.0.tgz", {}, "sha512-V8AVnmPIICiWpGfm6GLzCR/W5FXLchHop40W4nXBmdlEceh16rCN8O8LNWm5bh5XUX91fh7KpA+W0TgMKmgTpQ=="],
+    "react": ["react@19.1.0", "https://registry.npmmirror.com/react/-/react-19.1.0.tgz", {}, "sha512-FS+XFBNvn3GTAWq26joslQgWNoFu08F4kl0J4CgdNKADkdSGXQyTCnKteIAJy96Br6YbpEU1LSzV5dYtjMkMDg=="],
 
     "react-confetti": ["react-confetti@6.4.0", "https://registry.npmmirror.com/react-confetti/-/react-confetti-6.4.0.tgz", { "dependencies": { "tween-functions": "^1.2.0" }, "peerDependencies": { "react": "^16.3.0 || ^17.0.1 || ^18.0.0 || ^19.0.0" } }, "sha512-5MdGUcqxrTU26I2EU7ltkWPwxvucQTuqMm8dUz72z2YMqTD6s9vMcDUysk7n9jnC+lXuCPeJJ7Knf98VEYE9Rg=="],
 
@@ -1780,6 +1778,8 @@
 
     "@storybook/addon-a11y/@storybook/test": ["@storybook/test@8.6.12", "", { "dependencies": { "@storybook/global": "^5.0.0", "@storybook/instrumenter": "8.6.12", "@testing-library/dom": "10.4.0", "@testing-library/jest-dom": "6.5.0", "@testing-library/user-event": "14.5.2", "@vitest/expect": "2.0.5", "@vitest/spy": "2.0.5" }, "peerDependencies": { "storybook": "^8.6.12" } }, "sha512-0BK1Eg+VD0lNMB1BtxqHE3tP9FdkUmohtvWG7cq6lWvMrbCmAmh3VWai3RMCCDOukPFpjabOr8BBRLVvhNpv2w=="],
 
+    "@storybook/addon-docs/react": ["react@19.0.0", "https://registry.npmmirror.com/react/-/react-19.0.0.tgz", {}, "sha512-V8AVnmPIICiWpGfm6GLzCR/W5FXLchHop40W4nXBmdlEceh16rCN8O8LNWm5bh5XUX91fh7KpA+W0TgMKmgTpQ=="],
+
     "@storybook/addon-interactions/@storybook/test": ["@storybook/test@8.6.12", "", { "dependencies": { "@storybook/global": "^5.0.0", "@storybook/instrumenter": "8.6.12", "@testing-library/dom": "10.4.0", "@testing-library/jest-dom": "6.5.0", "@testing-library/user-event": "14.5.2", "@vitest/expect": "2.0.5", "@vitest/spy": "2.0.5" }, "peerDependencies": { "storybook": "^8.6.12" } }, "sha512-0BK1Eg+VD0lNMB1BtxqHE3tP9FdkUmohtvWG7cq6lWvMrbCmAmh3VWai3RMCCDOukPFpjabOr8BBRLVvhNpv2w=="],
 
     "@storybook/csf/type-fest": ["type-fest@2.19.0", "https://registry.npmmirror.com/type-fest/-/type-fest-2.19.0.tgz", {}, "sha512-RAH822pAdBgcNMAfWnCBU3CFZcfZ/i1eZjwFU/dsLKumyuuP3niueg2UAukXYF0E2AAoc82ZSSf9J0WQBinzHA=="],
@@ -2105,6 +2105,8 @@
     "storybook-builder-rsbuild/@storybook/addon-docs/@storybook/csf-plugin": ["@storybook/csf-plugin@8.6.11", "https://registry.npmmirror.com/@storybook/csf-plugin/-/csf-plugin-8.6.11.tgz", { "dependencies": { "unplugin": "^1.3.1" }, "peerDependencies": { "storybook": "^8.6.11" } }, "sha512-NC/o+SSjSC29hcQrPNoLCDRkqRTagkcAgFf0xEybX3mkLT0q+w3ZHJg1HQz7TtaigIzZ06iIPncif2xKvYgETw=="],
 
     "storybook-builder-rsbuild/@storybook/addon-docs/@storybook/react-dom-shim": ["@storybook/react-dom-shim@8.6.11", "https://registry.npmmirror.com/@storybook/react-dom-shim/-/react-dom-shim-8.6.11.tgz", { "peerDependencies": { "react": "^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0-beta", "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0-beta", "storybook": "^8.6.11" } }, "sha512-giwqwx0PO70SyqoZ25CBM2tpAjJX5sjPm7uWKknYcFGl3H2PYDqqnvH7NfEXENQMq5DpAJisCZ0KkRvNHzLV2w=="],
+
+    "storybook-builder-rsbuild/@storybook/addon-docs/react": ["react@19.0.0", "https://registry.npmmirror.com/react/-/react-19.0.0.tgz", {}, "sha512-V8AVnmPIICiWpGfm6GLzCR/W5FXLchHop40W4nXBmdlEceh16rCN8O8LNWm5bh5XUX91fh7KpA+W0TgMKmgTpQ=="],
 
     "storybook-builder-rsbuild/@storybook/addon-docs/react-dom": ["react-dom@19.0.0", "https://registry.npmmirror.com/react-dom/-/react-dom-19.0.0.tgz", { "dependencies": { "scheduler": "^0.25.0" }, "peerDependencies": { "react": "^19.0.0" } }, "sha512-4GV5sHFG0e/0AD4X+ySy6UJd3jVl1iNsNHdpad0qhABJ11twS3TTBnseqsKurKcsNqCEFeGL3uLpVChpIO3QfQ=="],
 
