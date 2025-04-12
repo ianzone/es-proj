@@ -1,14 +1,12 @@
 {
   "name": "@es-proj/rn",
-  "version": "1.0.0",
-  "description": "Config files for your React Native projects.",
+  "version": "1.0.1",
+  "description": "Config files for your React Native projects with Expo.",
   "type": "module",
   "scripts": {
     "release": "bun publish --access public"
   },
-  "dependencies": {},
-  "devDependencies": {},
-  "peerDependencies": {
+  "dependencies": {
     "@es-proj/utils": "workspace:*",
     "@testing-library/react-native": "^13.2.0",
     "@types/jest": "^29.5.14",

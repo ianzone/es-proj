@@ -1,11 +1,13 @@
+import { pluginReact } from '@rsbuild/plugin-react';
 import { defineConfig } from '@rslib/core';
 
-export const rslibConfigBase = defineConfig({
+export const rslibConfig = defineConfig({
   source: {
     entry: {
       index: ['src/**', '!src/**/*.{test,spec,stories}.*', '!src/**/*.mdx'],
     },
   },
+  plugins: [pluginReact()],
   lib: [
     {
       bundle: false,

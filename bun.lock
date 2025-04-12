@@ -14,20 +14,18 @@
     },
     "packages/configs": {
       "name": "@es-proj/configs",
-      "version": "1.0.8",
-      "peerDependencies": {
+      "version": "1.0.9",
+      "dependencies": {
         "@biomejs/biome": "^1.9.4",
         "typescript": "^5.8.3",
       },
     },
     "packages/react": {
       "name": "@es-proj/react",
-      "version": "1.0.4",
-      "devDependencies": {
-        "@testing-library/react": "^16.3.0",
-      },
-      "peerDependencies": {
+      "version": "1.0.6",
+      "dependencies": {
         "@es-proj/utils": "workspace:*",
+        "@testing-library/react": "^16.3.0",
         "@types/react": "^19.1.1",
         "@types/react-dom": "^19.1.2",
         "react": "^19.1.0",
@@ -36,8 +34,8 @@
     },
     "packages/rn": {
       "name": "@es-proj/rn",
-      "version": "1.0.0",
-      "peerDependencies": {
+      "version": "1.0.1",
+      "dependencies": {
         "@es-proj/utils": "workspace:*",
         "@testing-library/react-native": "^13.2.0",
         "@types/jest": "^29.5.14",
@@ -46,24 +44,23 @@
         "jest-expo": "^52.0.6",
       },
     },
-    "packages/story-react": {
-      "name": "@es-proj/story-react",
-      "version": "1.0.10",
-      "peerDependencies": {
+    "packages/story-react-rsbuild": {
+      "name": "@es-proj/story-react-rsbuild",
+      "version": "1.0.1",
+      "dependencies": {
         "@es-proj/react": "workspace:*",
         "@es-proj/storybook": "workspace:*",
         "@rsbuild/plugin-react": "^1.2.0",
         "@storybook/react": "^8.6.12",
-        "@testing-library/react": "^16.3.0",
+        "storybook-addon-rslib": "^1.0.1",
         "storybook-react-rsbuild": "^1.0.1",
       },
     },
     "packages/storybook": {
       "name": "@es-proj/storybook",
-      "version": "1.0.3",
-      "peerDependencies": {
+      "version": "1.0.5",
+      "dependencies": {
         "@chromatic-com/storybook": "^3.2.6",
-        "@es-proj/configs": "workspace:*",
         "@storybook/addon-a11y": "^8.6.12",
         "@storybook/addon-coverage": "^1.0.5",
         "@storybook/addon-essentials": "^8.6.12",
@@ -74,18 +71,15 @@
         "@vitest/coverage-istanbul": "^3.1.1",
         "happy-dom": "^17.4.4",
         "storybook": "^8.6.12",
-        "storybook-addon-rslib": "^1.0.1",
       },
     },
     "packages/utils": {
       "name": "@es-proj/utils",
-      "version": "1.6.5",
+      "version": "1.6.6",
       "dependencies": {
+        "@es-proj/configs": "workspace:*",
         "glob": "^11.0.1",
         "type-fest": "^4.39.1",
-      },
-      "peerDependencies": {
-        "@es-proj/configs": "workspace:*",
       },
     },
   },
@@ -406,7 +400,7 @@
 
     "@es-proj/rn": ["@es-proj/rn@workspace:packages/rn"],
 
-    "@es-proj/story-react": ["@es-proj/story-react@workspace:packages/story-react"],
+    "@es-proj/story-react-rsbuild": ["@es-proj/story-react-rsbuild@workspace:packages/story-react-rsbuild"],
 
     "@es-proj/storybook": ["@es-proj/storybook@workspace:packages/storybook"],
 
@@ -1436,7 +1430,7 @@
 
     "finalhandler": ["finalhandler@1.1.2", "", { "dependencies": { "debug": "2.6.9", "encodeurl": "~1.0.2", "escape-html": "~1.0.3", "on-finished": "~2.3.0", "parseurl": "~1.3.3", "statuses": "~1.5.0", "unpipe": "~1.0.0" } }, "sha512-aAWcW57uxVNrQZqFXjITpW3sIUQmHGG3qSb9mUah9MgMC4NeWhNOlNjXEYq3HjRAvL6arUviZGGJsBg6z0zsWA=="],
 
-    "find-cache-dir": ["find-cache-dir@3.3.2", "https://registry.npmmirror.com/find-cache-dir/-/find-cache-dir-3.3.2.tgz", { "dependencies": { "commondir": "^1.0.1", "make-dir": "^3.0.2", "pkg-dir": "^4.1.0" } }, "sha512-wXZV5emFEjrridIgED11OoUKLxiYjAcqot/NJdAkOhlJ+vGzwhOAfcG5OX1jP+S0PcjEn8bdMJv+g2jwQ3Onig=="],
+    "find-cache-dir": ["find-cache-dir@5.0.0", "https://registry.npmmirror.com/find-cache-dir/-/find-cache-dir-5.0.0.tgz", { "dependencies": { "common-path-prefix": "^3.0.0", "pkg-dir": "^7.0.0" } }, "sha512-OuWNfjfP05JcpAP3JPgAKUhWefjMRfI5iAoSsvE24ANYWJaepAtlSgWECSVEuRgSXpyNEc9DJwG/TZpgcOqyig=="],
 
     "find-file-up": ["find-file-up@0.1.3", "https://registry.npmmirror.com/find-file-up/-/find-file-up-0.1.3.tgz", { "dependencies": { "fs-exists-sync": "^0.1.0", "resolve-dir": "^0.1.0" } }, "sha512-mBxmNbVyjg1LQIIpgO8hN+ybWBgDQK8qjht+EbrTCGmmPV/sc7RF1i9stPTD6bpvXZywBdrwRYxhSdJv867L6A=="],
 
@@ -2708,6 +2702,8 @@
 
     "@storybook/csf/type-fest": ["type-fest@2.19.0", "https://registry.npmmirror.com/type-fest/-/type-fest-2.19.0.tgz", {}, "sha512-RAH822pAdBgcNMAfWnCBU3CFZcfZ/i1eZjwFU/dsLKumyuuP3niueg2UAukXYF0E2AAoc82ZSSf9J0WQBinzHA=="],
 
+    "@storybook/react-docgen-typescript-plugin/find-cache-dir": ["find-cache-dir@3.3.2", "https://registry.npmmirror.com/find-cache-dir/-/find-cache-dir-3.3.2.tgz", { "dependencies": { "commondir": "^1.0.1", "make-dir": "^3.0.2", "pkg-dir": "^4.1.0" } }, "sha512-wXZV5emFEjrridIgED11OoUKLxiYjAcqot/NJdAkOhlJ+vGzwhOAfcG5OX1jP+S0PcjEn8bdMJv+g2jwQ3Onig=="],
+
     "@storybook/test/@storybook/instrumenter": ["@storybook/instrumenter@8.6.11", "https://registry.npmmirror.com/@storybook/instrumenter/-/instrumenter-8.6.11.tgz", { "dependencies": { "@storybook/global": "^5.0.0", "@vitest/utils": "^2.1.1" }, "peerDependencies": { "storybook": "^8.6.11" } }, "sha512-IOLvc4BOVKofWhyRScA2h/R36cACBK3DUCrZkQTLU+FUIXWg7Yjyco7lDEk/0W9mlH0Fe/eWEhluI2WTowkesQ=="],
 
     "@storybook/test-runner/jest-watch-typeahead": ["jest-watch-typeahead@2.2.2", "https://registry.npmmirror.com/jest-watch-typeahead/-/jest-watch-typeahead-2.2.2.tgz", { "dependencies": { "ansi-escapes": "^6.0.0", "chalk": "^5.2.0", "jest-regex-util": "^29.0.0", "jest-watcher": "^29.0.0", "slash": "^5.0.0", "string-length": "^5.0.1", "strip-ansi": "^7.0.1" }, "peerDependencies": { "jest": "^27.0.0 || ^28.0.0 || ^29.0.0" } }, "sha512-+QgOFW4o5Xlgd6jGS5X37i08tuuXNW8X0CV9WNFi+3n8ExCIP+E1melYhvYLjv5fE6D0yyzk74vsSO8I6GqtvQ=="],
@@ -2824,6 +2820,8 @@
 
     "finalhandler/statuses": ["statuses@1.5.0", "", {}, "sha512-OpZ3zP+jT1PI7I8nemJX4AKmAX070ZkYPVWV/AaKTJl+tXCTGyVdC1a4SL8RUQYEwk/f34ZX8UTykN68FwrqAA=="],
 
+    "find-cache-dir/pkg-dir": ["pkg-dir@7.0.0", "https://registry.npmmirror.com/pkg-dir/-/pkg-dir-7.0.0.tgz", { "dependencies": { "find-up": "^6.3.0" } }, "sha512-Ie9z/WINcxxLp27BKOCHGde4ITq9UklYKDzVo1nhk5sqGEXU3FpkwP5GM2voTGJkGd9B3Otl+Q4uwSOeSUtOBA=="],
+
     "foreground-child/signal-exit": ["signal-exit@4.1.0", "https://registry.npmmirror.com/signal-exit/-/signal-exit-4.1.0.tgz", {}, "sha512-bzyZ1e88w9O1iNJbKnOlvYTrWPDl46O1bG0D3XInv+9tkPrxrN8jUUTiFlDkkmKWgn1M6CfIA13SuGqOa9Korw=="],
 
     "glob/minimatch": ["minimatch@10.0.1", "https://registry.npmmirror.com/minimatch/-/minimatch-10.0.1.tgz", { "dependencies": { "brace-expansion": "^2.0.1" } }, "sha512-ethXTt3SGGR+95gudmqJ1eNhRO7eGEGIgYA9vnPatK4/etz2MEVDno5GMCibdMTuBMyElzIlgxMna3K94XDIDQ=="],
@@ -2936,6 +2934,8 @@
 
     "nyc/convert-source-map": ["convert-source-map@1.9.0", "https://registry.npmmirror.com/convert-source-map/-/convert-source-map-1.9.0.tgz", {}, "sha512-ASFBup0Mz1uyiIjANan1jzLQami9z1PoYSZCiiYW2FczPbenXc45FZdBZLzOT+r6+iciuEModtmCti+hjaAk0A=="],
 
+    "nyc/find-cache-dir": ["find-cache-dir@3.3.2", "https://registry.npmmirror.com/find-cache-dir/-/find-cache-dir-3.3.2.tgz", { "dependencies": { "commondir": "^1.0.1", "make-dir": "^3.0.2", "pkg-dir": "^4.1.0" } }, "sha512-wXZV5emFEjrridIgED11OoUKLxiYjAcqot/NJdAkOhlJ+vGzwhOAfcG5OX1jP+S0PcjEn8bdMJv+g2jwQ3Onig=="],
+
     "nyc/find-up": ["find-up@4.1.0", "https://registry.npmmirror.com/find-up/-/find-up-4.1.0.tgz", { "dependencies": { "locate-path": "^5.0.0", "path-exists": "^4.0.0" } }, "sha512-PpOwAdQ/YlXQ2vj8a3h8IipDuYRi3wceVQQGYWxNINccq40Anw7BlsEXCMbt1Zt+OLA6Fq9suIpIWD0OsnISlw=="],
 
     "nyc/foreground-child": ["foreground-child@2.0.0", "https://registry.npmmirror.com/foreground-child/-/foreground-child-2.0.0.tgz", { "dependencies": { "cross-spawn": "^7.0.0", "signal-exit": "^3.0.2" } }, "sha512-dCIq9FpEcyQyXKCkyzmlPTFNgrCzPudOe+mhvJU5zAtlBnGVy2yKxtfsxK2tQBThwq225jcvBjpw1Gr40uzZCA=="],
@@ -3007,8 +3007,6 @@
     "stacktrace-parser/type-fest": ["type-fest@0.7.1", "", {}, "sha512-Ne2YiiGN8bmrmJJEuTWTLJR32nh/JdL1+PSicowtNb0WFpn59GK8/lfD61bVtzguz7b3PBt74nxpv/Pw5po5Rg=="],
 
     "storybook-builder-rsbuild/@storybook/addon-docs": ["@storybook/addon-docs@8.6.11", "https://registry.npmmirror.com/@storybook/addon-docs/-/addon-docs-8.6.11.tgz", { "dependencies": { "@mdx-js/react": "^3.0.0", "@storybook/blocks": "8.6.11", "@storybook/csf-plugin": "8.6.11", "@storybook/react-dom-shim": "8.6.11", "react": "^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0", "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0", "ts-dedent": "^2.0.0" }, "peerDependencies": { "storybook": "^8.6.11" } }, "sha512-gTSF1m3HJkeU7GKPYhe8grO48FbpulvIWZ213PtnWedgVkTNieok3oBmmigv17ua/QXH0u5EbaoMSxaAyrsAzg=="],
-
-    "storybook-builder-rsbuild/find-cache-dir": ["find-cache-dir@5.0.0", "https://registry.npmmirror.com/find-cache-dir/-/find-cache-dir-5.0.0.tgz", { "dependencies": { "common-path-prefix": "^3.0.0", "pkg-dir": "^7.0.0" } }, "sha512-OuWNfjfP05JcpAP3JPgAKUhWefjMRfI5iAoSsvE24ANYWJaepAtlSgWECSVEuRgSXpyNEc9DJwG/TZpgcOqyig=="],
 
     "string-width/strip-ansi": ["strip-ansi@6.0.1", "https://registry.npmmirror.com/strip-ansi/-/strip-ansi-6.0.1.tgz", { "dependencies": { "ansi-regex": "^5.0.1" } }, "sha512-Y38VPSHcqkFrCpFnQ9vuSXmquuv5oXOKpGeT6aGrr3o3Gc9AlVa6JBfUSOCnbxGGZF+/0ooI7KrPuUSztUdU5A=="],
 
@@ -3244,6 +3242,8 @@
 
     "finalhandler/debug/ms": ["ms@2.0.0", "", {}, "sha512-Tpp60P6IUJDTuOq/5Z8cdskzJujfwqfOTkrwIwj7IRISpnkJnT6SyJ4PCPnGMoFjC9ddhal5KVIYtAt97ix05A=="],
 
+    "find-cache-dir/pkg-dir/find-up": ["find-up@6.3.0", "https://registry.npmmirror.com/find-up/-/find-up-6.3.0.tgz", { "dependencies": { "locate-path": "^7.1.0", "path-exists": "^5.0.0" } }, "sha512-v2ZsoEuVHYy8ZIlYqwPe/39Cy+cFDzp4dXPaxNvkEuouymu+2Jbz0PxpKarJHYJTmv2HWT3O382qY8l4jMWthw=="],
+
     "jest-circus/@types/node/undici-types": ["undici-types@6.20.0", "https://registry.npmmirror.com/undici-types/-/undici-types-6.20.0.tgz", {}, "sha512-Ny6QZ2Nju20vw1SRHe3d9jVu6gJ+4e3+MMpqu7pqE5HT6WsTSlce++GQmK5UXS8mzV8DSYHrQH+Xrf2jVcuKNg=="],
 
     "jest-config/glob/minimatch": ["minimatch@3.1.2", "https://registry.npmmirror.com/minimatch/-/minimatch-3.1.2.tgz", { "dependencies": { "brace-expansion": "^1.1.7" } }, "sha512-J7p63hRiAjw1NDEww1W7i37+ByIrOWO5XQQAzZ3VOcL0PNybwpfmV/N05zFAzwQ9USyEcX6t3UO+K5aqBQOIHw=="],
@@ -3327,8 +3327,6 @@
     "storybook-builder-rsbuild/@storybook/addon-docs/react": ["react@19.0.0", "https://registry.npmmirror.com/react/-/react-19.0.0.tgz", {}, "sha512-V8AVnmPIICiWpGfm6GLzCR/W5FXLchHop40W4nXBmdlEceh16rCN8O8LNWm5bh5XUX91fh7KpA+W0TgMKmgTpQ=="],
 
     "storybook-builder-rsbuild/@storybook/addon-docs/react-dom": ["react-dom@19.0.0", "https://registry.npmmirror.com/react-dom/-/react-dom-19.0.0.tgz", { "dependencies": { "scheduler": "^0.25.0" }, "peerDependencies": { "react": "^19.0.0" } }, "sha512-4GV5sHFG0e/0AD4X+ySy6UJd3jVl1iNsNHdpad0qhABJ11twS3TTBnseqsKurKcsNqCEFeGL3uLpVChpIO3QfQ=="],
-
-    "storybook-builder-rsbuild/find-cache-dir/pkg-dir": ["pkg-dir@7.0.0", "https://registry.npmmirror.com/pkg-dir/-/pkg-dir-7.0.0.tgz", { "dependencies": { "find-up": "^6.3.0" } }, "sha512-Ie9z/WINcxxLp27BKOCHGde4ITq9UklYKDzVo1nhk5sqGEXU3FpkwP5GM2voTGJkGd9B3Otl+Q4uwSOeSUtOBA=="],
 
     "sucrase/glob/jackspeak": ["jackspeak@3.4.3", "https://registry.npmmirror.com/jackspeak/-/jackspeak-3.4.3.tgz", { "dependencies": { "@isaacs/cliui": "^8.0.2" }, "optionalDependencies": { "@pkgjs/parseargs": "^0.11.0" } }, "sha512-OGlZQpz2yfahA/Rd1Y8Cd9SIEsqvXkLVoSw/cgwhnhFMDbsQFeZYoJJ7bIZBS9BcamUW96asq/npPWugM+RQBw=="],
 
@@ -3418,6 +3416,10 @@
 
     "default-gateway/execa/npm-run-path/path-key": ["path-key@2.0.1", "", {}, "sha512-fEHGKCSmUSDPv4uoj8AlD+joPlq3peND+HRYyxFz4KPw4z926S/b8rIuFs2FYJg3BwsxJf6A9/3eIdLaYC+9Dw=="],
 
+    "find-cache-dir/pkg-dir/find-up/locate-path": ["locate-path@7.2.0", "https://registry.npmmirror.com/locate-path/-/locate-path-7.2.0.tgz", { "dependencies": { "p-locate": "^6.0.0" } }, "sha512-gvVijfZvn7R+2qyPX8mAuKcFGDf6Nc61GdvGafQsHL0sBIxfKzA+usWn4GFC/bk+QdwPUD4kWFJLhElipq+0VA=="],
+
+    "find-cache-dir/pkg-dir/find-up/path-exists": ["path-exists@5.0.0", "https://registry.npmmirror.com/path-exists/-/path-exists-5.0.0.tgz", {}, "sha512-RjhtfwJOxzcFmNOi6ltcbcu4Iu+FL3zEj83dk4kAS+fVpTxXLO1b38RvJgT/0QwvV/L3aY9TAnyv0EOqW4GoMQ=="],
+
     "jest-config/glob/minimatch/brace-expansion": ["brace-expansion@1.1.11", "https://registry.npmmirror.com/brace-expansion/-/brace-expansion-1.1.11.tgz", { "dependencies": { "balanced-match": "^1.0.0", "concat-map": "0.0.1" } }, "sha512-iCuPHDFgrHX7H2vEI/5xpz07zSHB00TpugqhmYtVmMO6518mCuRMoOYFldEBl0g187ufozdaHgWKcYFb61qGiA=="],
 
     "jest-runtime/glob/minimatch/brace-expansion": ["brace-expansion@1.1.11", "https://registry.npmmirror.com/brace-expansion/-/brace-expansion-1.1.11.tgz", { "dependencies": { "balanced-match": "^1.0.0", "concat-map": "0.0.1" } }, "sha512-iCuPHDFgrHX7H2vEI/5xpz07zSHB00TpugqhmYtVmMO6518mCuRMoOYFldEBl0g187ufozdaHgWKcYFb61qGiA=="],
@@ -3439,8 +3441,6 @@
     "serve-static/send/debug/ms": ["ms@2.0.0", "", {}, "sha512-Tpp60P6IUJDTuOq/5Z8cdskzJujfwqfOTkrwIwj7IRISpnkJnT6SyJ4PCPnGMoFjC9ddhal5KVIYtAt97ix05A=="],
 
     "storybook-builder-rsbuild/@storybook/addon-docs/react-dom/scheduler": ["scheduler@0.25.0", "https://registry.npmmirror.com/scheduler/-/scheduler-0.25.0.tgz", {}, "sha512-xFVuu11jh+xcO7JOAGJNOXld8/TcEHK/4CituBUeUb5hqxJLj9YuemAEuvm9gQ/+pgXYfbQuqAkiYu+u7YEsNA=="],
-
-    "storybook-builder-rsbuild/find-cache-dir/pkg-dir/find-up": ["find-up@6.3.0", "https://registry.npmmirror.com/find-up/-/find-up-6.3.0.tgz", { "dependencies": { "locate-path": "^7.1.0", "path-exists": "^5.0.0" } }, "sha512-v2ZsoEuVHYy8ZIlYqwPe/39Cy+cFDzp4dXPaxNvkEuouymu+2Jbz0PxpKarJHYJTmv2HWT3O382qY8l4jMWthw=="],
 
     "sucrase/glob/path-scurry/lru-cache": ["lru-cache@10.4.3", "https://registry.npmmirror.com/lru-cache/-/lru-cache-10.4.3.tgz", {}, "sha512-JNAzZcXrCt42VGLuYz0zfAzDfAvJWW6AfYlDBQyDV5DClI2m5sAmK+OIO7s59XfsRsWHp02jAJrRadPRGTt6SQ=="],
 
@@ -3496,13 +3496,11 @@
 
     "default-gateway/execa/cross-spawn/shebang-command/shebang-regex": ["shebang-regex@1.0.0", "", {}, "sha512-wpoSFAxys6b2a2wHZ1XpDSgD7N9iVjg29Ph9uV/uaP9Ex/KXlkTZTeddxDPSYQpgvzKLGJke2UU0AzoGCjNIvQ=="],
 
+    "find-cache-dir/pkg-dir/find-up/locate-path/p-locate": ["p-locate@6.0.0", "https://registry.npmmirror.com/p-locate/-/p-locate-6.0.0.tgz", { "dependencies": { "p-limit": "^4.0.0" } }, "sha512-wPrq66Llhl7/4AGC6I+cqxT07LhXvWL08LNXz1fENOw0Ap4sRZZ/gZpTTJ5jpurzzzfS2W/Ge9BY3LgLjCShcw=="],
+
     "nyc/find-up/locate-path/p-locate/p-limit": ["p-limit@2.3.0", "https://registry.npmmirror.com/p-limit/-/p-limit-2.3.0.tgz", { "dependencies": { "p-try": "^2.0.0" } }, "sha512-//88mFWSJx8lxCzwdAABTJL2MyWB12+eIY7MDL2SqLmAkeKU9qxRvWuSyTjm3FUmpBEMuFfckAIqEaVGUDxb6w=="],
 
     "pkg-dir/find-up/locate-path/p-locate/p-limit": ["p-limit@2.3.0", "https://registry.npmmirror.com/p-limit/-/p-limit-2.3.0.tgz", { "dependencies": { "p-try": "^2.0.0" } }, "sha512-//88mFWSJx8lxCzwdAABTJL2MyWB12+eIY7MDL2SqLmAkeKU9qxRvWuSyTjm3FUmpBEMuFfckAIqEaVGUDxb6w=="],
-
-    "storybook-builder-rsbuild/find-cache-dir/pkg-dir/find-up/locate-path": ["locate-path@7.2.0", "https://registry.npmmirror.com/locate-path/-/locate-path-7.2.0.tgz", { "dependencies": { "p-locate": "^6.0.0" } }, "sha512-gvVijfZvn7R+2qyPX8mAuKcFGDf6Nc61GdvGafQsHL0sBIxfKzA+usWn4GFC/bk+QdwPUD4kWFJLhElipq+0VA=="],
-
-    "storybook-builder-rsbuild/find-cache-dir/pkg-dir/find-up/path-exists": ["path-exists@5.0.0", "https://registry.npmmirror.com/path-exists/-/path-exists-5.0.0.tgz", {}, "sha512-RjhtfwJOxzcFmNOi6ltcbcu4Iu+FL3zEj83dk4kAS+fVpTxXLO1b38RvJgT/0QwvV/L3aY9TAnyv0EOqW4GoMQ=="],
 
     "temp/rimraf/glob/minimatch/brace-expansion": ["brace-expansion@1.1.11", "https://registry.npmmirror.com/brace-expansion/-/brace-expansion-1.1.11.tgz", { "dependencies": { "balanced-match": "^1.0.0", "concat-map": "0.0.1" } }, "sha512-iCuPHDFgrHX7H2vEI/5xpz07zSHB00TpugqhmYtVmMO6518mCuRMoOYFldEBl0g187ufozdaHgWKcYFb61qGiA=="],
 
@@ -3520,12 +3518,10 @@
 
     "@expo/package-manager/ora/cli-cursor/restore-cursor/onetime/mimic-fn": ["mimic-fn@1.2.0", "", {}, "sha512-jf84uxzwiuiIVKiOLpfYk7N46TSy8ubTonmneY9vrpHNAnp0QBt2BxWV9dO3/j+BoVAb+a5G6YDPW3M5HOdMWQ=="],
 
-    "storybook-builder-rsbuild/find-cache-dir/pkg-dir/find-up/locate-path/p-locate": ["p-locate@6.0.0", "https://registry.npmmirror.com/p-locate/-/p-locate-6.0.0.tgz", { "dependencies": { "p-limit": "^4.0.0" } }, "sha512-wPrq66Llhl7/4AGC6I+cqxT07LhXvWL08LNXz1fENOw0Ap4sRZZ/gZpTTJ5jpurzzzfS2W/Ge9BY3LgLjCShcw=="],
+    "find-cache-dir/pkg-dir/find-up/locate-path/p-locate/p-limit": ["p-limit@4.0.0", "https://registry.npmmirror.com/p-limit/-/p-limit-4.0.0.tgz", { "dependencies": { "yocto-queue": "^1.0.0" } }, "sha512-5b0R4txpzjPWVw/cXXUResoD4hb6U/x9BH08L7nw+GN1sezDzPdxeRvpc9c433fZhBan/wusjbCsqwqm4EIBIQ=="],
 
     "@babel/register/find-cache-dir/pkg-dir/find-up/locate-path/p-locate/p-limit": ["p-limit@2.3.0", "https://registry.npmmirror.com/p-limit/-/p-limit-2.3.0.tgz", { "dependencies": { "p-try": "^2.0.0" } }, "sha512-//88mFWSJx8lxCzwdAABTJL2MyWB12+eIY7MDL2SqLmAkeKU9qxRvWuSyTjm3FUmpBEMuFfckAIqEaVGUDxb6w=="],
 
-    "storybook-builder-rsbuild/find-cache-dir/pkg-dir/find-up/locate-path/p-locate/p-limit": ["p-limit@4.0.0", "https://registry.npmmirror.com/p-limit/-/p-limit-4.0.0.tgz", { "dependencies": { "yocto-queue": "^1.0.0" } }, "sha512-5b0R4txpzjPWVw/cXXUResoD4hb6U/x9BH08L7nw+GN1sezDzPdxeRvpc9c433fZhBan/wusjbCsqwqm4EIBIQ=="],
-
-    "storybook-builder-rsbuild/find-cache-dir/pkg-dir/find-up/locate-path/p-locate/p-limit/yocto-queue": ["yocto-queue@1.2.1", "https://registry.npmmirror.com/yocto-queue/-/yocto-queue-1.2.1.tgz", {}, "sha512-AyeEbWOu/TAXdxlV9wmGcR0+yh2j3vYPGOECcIj2S7MkrLyC7ne+oye2BKTItt0ii2PHk4cDy+95+LshzbXnGg=="],
+    "find-cache-dir/pkg-dir/find-up/locate-path/p-locate/p-limit/yocto-queue": ["yocto-queue@1.2.1", "https://registry.npmmirror.com/yocto-queue/-/yocto-queue-1.2.1.tgz", {}, "sha512-AyeEbWOu/TAXdxlV9wmGcR0+yh2j3vYPGOECcIj2S7MkrLyC7ne+oye2BKTItt0ii2PHk4cDy+95+LshzbXnGg=="],
   }
 }
