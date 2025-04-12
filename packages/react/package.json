@@ -28,7 +28,9 @@
     "@es-proj/utils": "workspace:*",
     "@testing-library/react": "^16.3.0",
     "@types/react": "^19.1.1",
-    "@types/react-dom": "^19.1.2",
+    "@types/react-dom": "^19.1.2"
+  },
+  "peerDependencies": {
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
   }

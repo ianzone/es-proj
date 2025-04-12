@@ -1,0 +1,22 @@
+{
+  "name": "@es-proj/react-vite",
+  "version": "1.0.0",
+  "description": "Utils for your React Vite projects.",
+  "type": "module",
+  "files": ["dist"],
+  "exports": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "rm -rf dist && tsc",
+    "release": "bun publish --access public"
+  },
+  "dependencies": {
+    "@es-proj/react": "workspace:*",
+    "@vitejs/plugin-react-swc": "^3.8.1",
+    "@vitest/coverage-istanbul": "^3.1.1",
+    "code-inspector-plugin": "^0.20.9",
+    "happy-dom": "^17.4.4",
+    "vite": "^6.2.6",
+    "vitest": "^3.1.1"
+  }
+}
