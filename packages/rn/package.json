@@ -1,6 +1,6 @@
 {
   "name": "@es-proj/rn",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Config files for your React Native projects with Expo.",
   "type": "module",
   "scripts": {
@@ -10,8 +10,8 @@
     "@es-proj/utils": "workspace:*",
     "@testing-library/react-native": "^13.2.0",
     "@types/jest": "^29.5.14",
-    "expo-doctor": "^1.12.8",
+    "expo-doctor": "^1.13.2",
     "jest": "^29.7.0",
-    "jest-expo": "^52.0.6"
+    "jest-expo": "^53.0.3"
   }
 }
