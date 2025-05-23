@@ -8,7 +8,7 @@
     "target": "ESNext", // 生成的目标代码规范
     "module": "ESNext", // 生成的模块规范
     "moduleResolution": "bundler", // 可以在使用用 exports 声明类型的同时，使用相对路径模块可以不写扩展名
-    "verbatimModuleSyntax": true, // 保留模块的原始语法，某些构建工具可能需要
+    "verbatimModuleSyntax": true, // 禁止混用 ESM 或 CommonJS 的导入导出语法
     "resolveJsonModule": true, // 允许导入 JSON 文件
     "noEmit": true,
     // 路径解析
@@ -26,7 +26,6 @@
     "sourceMap": true, // 生成源映射文件
     "sourceRoot": "${configDir}", // 源文件的根目录
     "declaration": true, // 生成 .d.ts 文件
-    "tsBuildInfoFile": "${configDir}/.cache/.tsbuildinfo", // 增量编译的缓存目录
     // 检查
     "strict": true,
     "allowJs": true,
@@ -37,11 +36,13 @@
   },
   "include": [
     "${configDir}/src",
+    "${configDir}/types",
     "${configDir}/scripts",
     "${configDir}/docs",
     "${configDir}/tests",
     "${configDir}/e2e",
     "${configDir}/demo",
+    "${configDir}/example",
     "${configDir}/site"
   ],
 }

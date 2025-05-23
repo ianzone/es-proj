@@ -1,2 +1,2 @@
-export * from './vite.js';
-export * from './vitest.js';
+export * from './vite';
+export * from './vitest';
