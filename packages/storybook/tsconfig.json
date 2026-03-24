@@ -1,7 +1,0 @@
-{
-  "extends": "@es-proj/configs/tsconfig.base",
-  "compilerOptions": {
-    "noEmit": false,
-    "rootDir": "./src"
-  }
-}
