@@ -9,5 +9,6 @@
       "dependsOn": ["^build"],
       "cache": true
     }
-  }
+  },
+  "analytics": false
 }

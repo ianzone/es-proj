@@ -1,9 +1,11 @@
 {
   "name": "@es-proj/utils",
-  "version": "1.6.7",
+  "version": "1.6.8",
   "description": "Utils for your JS/TS projects.",
   "type": "module",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "exports": {
     ".": {
       "default": "./dist/shared/index.js",

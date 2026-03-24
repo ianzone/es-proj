@@ -1,6 +1,6 @@
 {
   "name": "@es-proj/configs",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "description": "Config files for your JS/TS projects.",
   "files": [
     "biome.json",
