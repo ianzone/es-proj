@@ -5,7 +5,7 @@
  */
 export function getMimeType(filename: string) {
   // 获取文件扩展名
-  const ext = filename.toLowerCase().split('.').pop() || '';
+  const ext = filename.toLowerCase().split('.').pop() || filename;
   const mimeTypes: { [key: string]: string } = {
     // 图片
     jpg: 'image/jpeg',

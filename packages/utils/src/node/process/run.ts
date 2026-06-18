@@ -1,5 +1,6 @@
 import { type ExecException, exec, execSync } from 'node:child_process';
 import { promisify } from 'node:util';
+
 const pe = promisify(exec);
 // https://nodejs.org/api/child_process.html
 
@@ -16,9 +17,7 @@ export async function run(cmd: string) {
     stdout = (await subprocess).stdout;
   } catch (error) {
     const err = error as ExecException;
-    // @ts-ignore
     stdout = err.stdout || '';
-    // @ts-ignore
     stderr = err.stderr || err.message;
   }
 
@@ -42,11 +41,7 @@ export function runSync(cmd: string) {
     stdout = execSync(cmd, { stdio: 'pipe', windowsHide: true }).toString();
   } catch (error) {
     const err = error as ExecException;
-    // https://github.com/nodejs/node/issues/57392
-    // https://github.com/DefinitelyTyped/DefinitelyTyped/discussions/58854
-    // @ts-ignore
     stdout = err.stdout?.toString() || '';
-    // @ts-ignore
     stderr = err.stderr?.toString() || err.message;
     exitCode = err.code || 1;
   }

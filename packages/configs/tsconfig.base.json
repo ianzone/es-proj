@@ -8,6 +8,7 @@
     "moduleResolution": "bundler", // 可以在使用用 exports 声明类型的同时，使用相对路径模块可以不写扩展名
     "verbatimModuleSyntax": true, // 禁止混用 ESM 或 CommonJS 的导入导出语法
     "resolveJsonModule": true, // 允许导入 JSON 文件
+    "esModuleInterop": true, // 允许默认导入非 ES 模块
     "noEmit": true,
     // 路径解析
     "paths": {
@@ -26,15 +27,5 @@
     "noFallthroughCasesInSwitch": true,
     "forceConsistentCasingInFileNames": true
   },
-  "include": [
-    "${configDir}/src",
-    "${configDir}/types",
-    "${configDir}/scripts",
-    "${configDir}/docs",
-    "${configDir}/tests",
-    "${configDir}/e2e",
-    "${configDir}/demo",
-    "${configDir}/example",
-    "${configDir}/site"
-  ]
+  "include": ["${configDir}/src"]
 }
