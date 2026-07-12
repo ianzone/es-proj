@@ -1,6 +1,6 @@
 {
   "name": "@es-proj/utils",
-  "version": "1.6.11",
+  "version": "2.0.0",
   "description": "Utils for your JS/TS projects.",
   "type": "module",
   "files": [
@@ -33,6 +33,6 @@
   "dependencies": {
     "@es-proj/configs": "workspace:^",
     "glob": "^13.0.6",
-    "type-fest": "^5.7.0"
+    "type-fest": "^5.8.0"
   }
 }

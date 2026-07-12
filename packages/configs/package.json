@@ -1,6 +1,6 @@
 {
   "name": "@es-proj/configs",
-  "version": "1.0.14",
+  "version": "2.0.0",
   "description": "Config files for your JS/TS projects.",
   "files": [
     "biome.json",
@@ -16,7 +16,7 @@
     "release": "bun publish --access public"
   },
   "peerDependencies": {
-    "@biomejs/biome": "^2.5.0",
-    "typescript": "^6.0.3"
+    "@biomejs/biome": "^2.5.3",
+    "typescript": "^7.0.2"
   }
 }
