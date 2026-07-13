@@ -1,6 +1,6 @@
 {
   "name": "@es-proj/configs",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Config files for your JS/TS projects.",
   "files": [
     "biome.json",
@@ -13,10 +13,18 @@
   "scripts": {
     "prepack": "sed -n '2p' biome.json > tmp && sed -i '2d' 'biome.json'",
     "postpack": "sed -i '1r tmp' biome.json && rm tmp",
-    "release": "bun publish --access public"
+    "release": "bun publish --access public --registry https://registry.npmjs.org"
   },
   "peerDependencies": {
     "@biomejs/biome": "^2.5.3",
     "typescript": "^7.0.2"
+  },
+  "peerDependenciesMeta": {
+    "@biomejs/biome": {
+      "optional": true
+    },
+    "typescript": {
+      "optional": true
+    }
   }
 }
